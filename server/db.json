@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "example",
+      "email": "example@example.com",
+      "password": "hashed_password"
+    },
+    {
+      "username": "minhhien165",
+      "email": "fv@gmail.com",
+      "fullname": "Nguyễn Minh Hiển",
+      "password": "12345678765432",
+      "id": 2
+    }
+  ]
+}
