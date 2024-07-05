@@ -1,8 +1,13 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { User } from '../../interfaces/UserInterface';
+import { RegisterFormData } from '../../interfaces/RegisterFormData';
 
-const RegisterPage = () => {
-  const [formData, setFormData] = useState({
+const RegisterPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState<RegisterFormData>({
     username: '',
     email: '',
     fullname: '',
@@ -38,10 +43,22 @@ const RegisterPage = () => {
         return;
       }
 
-      const response = await axios.post('http://localhost:8080/users', formData);
+      const newUser: Omit<User, 'user_id'> = {
+        ...formData,
+        status: true,
+        role: false,
+        avatar: '',
+        phone: '',
+        address: '',
+        created_at: new Date().toLocaleDateString('vi-VN'),
+        updated_at: new Date().toLocaleDateString('vi-VN'),
+      };
+
+      const response = await axios.post('http://localhost:8080/users', newUser);
       console.log('User registered successfully:', response.data);
+      
       // Redirect to login page after successful registration
-      window.location.href = '/login'; // Example redirection, you might use React Router for this
+      navigate('/login');
     } catch (error) {
       console.error('Error registering user:', error);
       setErrorMessages({ ...errorMessages, general: 'Failed to register. Please try again later.' });

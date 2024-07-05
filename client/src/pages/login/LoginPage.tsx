@@ -1,9 +1,9 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const LoginPage = () => {
-  const history = useHistory();
+const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -18,8 +18,14 @@ const LoginPage = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setErrorMessages({ ...errorMessages, [name]: '' });
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    setErrorMessages(prevState => ({
+      ...prevState,
+      [name]: ''
+    }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -31,10 +37,21 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/login', formData);
-      console.log('User logged in successfully:', response.data);
-      // Redirect to dashboard or protected route after successful login
-      history.push('/dashboard'); // Redirect using React Router
+      const response = await axios.get(`http://localhost:8080/users?email=${formData.email}&password=${formData.password}`);
+      if (response.data.length === 0) {
+        setErrorMessages({ ...errorMessages, general: 'Invalid email or password. Please try again.' });
+        return;
+      }
+
+      const user = response.data[0];
+
+      console.log('User logged in successfully:', user);
+
+      if (user.role) {
+        navigate('/admin'); // Navigate to admin page if user is admin
+      } else {
+        navigate('/'); // Redirect to home page if user is not admin
+      }
     } catch (error) {
       console.error('Error logging in:', error);
       setErrorMessages({ ...errorMessages, general: 'Failed to log in. Please check your credentials.' });
@@ -77,7 +94,7 @@ const LoginPage = () => {
 
         {errorMessages.general && <div className="text-danger mb-3">{errorMessages.general}</div>}
 
-        <button className="btn btn-primary mb-4 w-100">Sign in</button>
+        <button type="submit" className="btn btn-primary mb-4 w-100">Sign in</button>
         <p className="text-center">Not a member? <a href="/register">Register</a></p>
       </form>
     </div>

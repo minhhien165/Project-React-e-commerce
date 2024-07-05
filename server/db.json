@@ -1,17 +1,18 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "example",
-      "email": "example@example.com",
-      "password": "hashed_password"
-    },
-    {
-      "username": "minhhien165",
+      "username": "minhhien12",
       "email": "fv@gmail.com",
       "fullname": "Nguyễn Minh Hiển",
-      "password": "12345678765432",
-      "id": 2
+      "password": "12345678",
+      "status": true,
+      "role": true,
+      "avatar": "",
+      "phone": "",
+      "address": "",
+      "created_at": "5/7/2024",
+      "updated_at": "5/7/2024",
+      "id": 1
     }
   ]
 }
