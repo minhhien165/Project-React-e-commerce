@@ -20,13 +20,13 @@
       "email": "cuong@gmail.com",
       "fullname": "ntcuong",
       "password": "012345678",
-      "status": "locked",
+      "status": "active",
       "role": "user",
       "avatar": "",
       "phone": "",
       "address": "",
       "created_at": "6/7/2024",
-      "updated_at": "8/7/2024"
+      "updated_at": "08/07/2024"
     },
     {
       "id": 3,
@@ -40,7 +40,22 @@
       "phone": "",
       "address": "",
       "created_at": "6/7/2024",
-      "updated_at": "6/7/2024"
+      "updated_at": "08/07/2024"
+    },
+    {
+      "username": "ldbgv",
+      "email": "jhcv@gmail.com",
+      "fullname": "jhcveja",
+      "password": "123456789",
+      "status": "active",
+      "role": "user",
+      "avatar": "",
+      "phone": "",
+      "address": "",
+      "created_at": "08/07/2024",
+      "updated_at": "08/07/2024",
+      "id": 4
     }
-  ]
+  ],
+  "categories": []
 }
