@@ -1,0 +1,13 @@
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 56px);
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  .content {
+    margin-left: 250px; /* Đẩy nội dung sang bên phải của sidebar */
+    width: calc(100% - 250px); /* Đảm bảo nội dung chiếm phần còn lại của màn hình */
+    padding: 20px;
+  }
+  

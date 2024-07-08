@@ -5,17 +5,20 @@ import HomePage from './pages/user/HomePage/HomePage';
 import LoginPage from './pages/login/LoginPage';
 import RegisterPage from './pages/register/RegisterPage';
 import HomeAdmin from './pages/admin/Home/HomeAdmin';
+import Customer from './pages/admin/customer/Customer';
 
 function App() {
   return (
-    <div>
+<div>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<HomePage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/admin" element={<HomeAdmin />} />
+        <Route path="/admin" element={<HomeAdmin />}>
+          <Route path="/admin/customers" element={<Customer />} />
+        </Route>
       </Routes>
     </div>
   );

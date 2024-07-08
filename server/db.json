@@ -1,18 +1,46 @@
 {
   "users": [
     {
+      "id": 1,
       "username": "minhhien12",
       "email": "fv@gmail.com",
       "fullname": "Nguyễn Minh Hiển",
       "password": "12345678",
-      "status": true,
-      "role": true,
+      "status": "active",
+      "role": "admin",
       "avatar": "",
       "phone": "",
       "address": "",
       "created_at": "5/7/2024",
-      "updated_at": "5/7/2024",
-      "id": 1
+      "updated_at": "5/7/2024"
+    },
+    {
+      "id": 2,
+      "username": "cuong",
+      "email": "cuong@gmail.com",
+      "fullname": "ntcuong",
+      "password": "012345678",
+      "status": "locked",
+      "role": "user",
+      "avatar": "",
+      "phone": "",
+      "address": "",
+      "created_at": "6/7/2024",
+      "updated_at": "8/7/2024"
+    },
+    {
+      "id": 3,
+      "username": "lan",
+      "email": "lan@gmail.com",
+      "fullname": "ntlan",
+      "password": "123456789",
+      "status": "active",
+      "role": "user",
+      "avatar": "",
+      "phone": "",
+      "address": "",
+      "created_at": "6/7/2024",
+      "updated_at": "6/7/2024"
     }
   ]
 }

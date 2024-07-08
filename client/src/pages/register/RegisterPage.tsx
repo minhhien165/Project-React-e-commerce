@@ -43,10 +43,10 @@ const RegisterPage: React.FC = () => {
         return;
       }
 
-      const newUser: Omit<User, 'user_id'> = {
+      const newUser: Omit<User, 'id'> = {
         ...formData,
-        status: true,
-        role: false,
+        status: 'active',
+        role: 'user',
         avatar: '',
         phone: '',
         address: '',
@@ -68,49 +68,7 @@ const RegisterPage: React.FC = () => {
   return (
     <div className="container p-3 my-5 d-flex flex-column w-50">
       <form onSubmit={handleSubmit}>
-        <div className="text-center mb-3">
-          <p>Sign up with:</p>
-          <div className="d-flex justify-content-between mx-auto" style={{ width: '40%' }}>
-            <a className="btn btn-link m-1" style={{ color: '#1266f1' }} href="#!" role="button">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a className="btn btn-link m-1" style={{ color: '#1266f1' }} href="#!" role="button">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a className="btn btn-link m-1" style={{ color: '#1266f1' }} href="#!" role="button">
-              <i className="fab fa-google"></i>
-            </a>
-            <a className="btn btn-link m-1" style={{ color: '#1266f1' }} href="#!" role="button">
-              <i className="fab fa-github"></i>
-            </a>
-          </div>
-          <p className="text-center mt-3">or:</p>
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="username" className="form-label">Username</label>
-          <input type="text" className="form-control" id="username" name="username" value={formData.username} onChange={handleChange} required />
-          {errorMessages.username && <div className="text-danger">{errorMessages.username}</div>}
-        </div>
-        <div className="mb-4">
-          <label htmlFor="email" className="form-label">Email</label>
-          <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
-          {errorMessages.email && <div className="text-danger">{errorMessages.email}</div>}
-        </div>
-        <div className="mb-4">
-          <label htmlFor="fullname" className="form-label">Full Name</label>
-          <input type="text" className="form-control" id="fullname" name="fullname" value={formData.fullname} onChange={handleChange} required />
-          {errorMessages.fullname && <div className="text-danger">{errorMessages.fullname}</div>}
-        </div>
-        <div className="mb-4">
-          <label htmlFor="password" className="form-label">Password</label>
-          <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
-          {errorMessages.password && <div className="text-danger">{errorMessages.password}</div>}
-        </div>
-
-        {errorMessages.general && <div className="text-danger mb-3">{errorMessages.general}</div>}
-
-        <button type="submit" className="btn btn-primary mb-4 w-100">Sign up</button>
+        {/* Form fields */}
       </form>
     </div>
   );

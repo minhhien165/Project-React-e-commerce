@@ -1,12 +1,12 @@
 // src/Interfaces/UserInterface.ts
 export interface User {
-    user_id: number;
+    id: number;
     username: string;
     email: string;
     fullname: string;
-    status: boolean;
+    status: 'active' | 'locked';
     password: string;
-    role: boolean;
+    role: 'admin' | 'user';
     avatar?: string;
     phone?: string;
     address?: string;

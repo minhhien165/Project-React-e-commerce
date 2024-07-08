@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { User } from '../../interfaces/UserInterface'; // Make sure to import the User interface from the correct path
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8080/users?email=${formData.email}&password=${formData.password}`);
+      const response = await axios.get<User[]>(`http://localhost:8080/users?email=${formData.email}&password=${formData.password}`);
       if (response.data.length === 0) {
         setErrorMessages({ ...errorMessages, general: 'Invalid email or password. Please try again.' });
         return;
@@ -45,12 +46,12 @@ const LoginPage: React.FC = () => {
 
       const user = response.data[0];
 
-      console.log('User logged in successfully:', user);
-
-      if (user.role) {
-        navigate('/admin'); // Navigate to admin page if user is admin
+      if (user.role === 'admin' && user.status === 'active') {
+        navigate('/admin'); // Navigate to admin page if user is admin and status is active
+      } else if (user.role === 'user' && user.status === 'active') {
+        navigate('/'); // Redirect to home page if user is not admin and status is active
       } else {
-        navigate('/'); // Redirect to home page if user is not admin
+        setErrorMessages({ ...errorMessages, general: 'Your account is inactive. Please contact support.' });
       }
     } catch (error) {
       console.error('Error logging in:', error);

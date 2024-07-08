@@ -8,9 +8,7 @@ const HomeAdmin = () => {
   const navigate = useNavigate();
 
   const onLogout = () => {
-    // Xóa thông tin đăng nhập (ví dụ: xóa token khỏi localStorage)
     localStorage.removeItem('userToken');
-    // Điều hướng về trang chủ
     navigate('/');
   };
 
@@ -18,28 +16,28 @@ const HomeAdmin = () => {
     <>
       <HeaderAdmin />
       <div className="d-flex" style={{ marginTop: '60px' }}>
-        <nav className="d-lg-block bg-white sidebar" style={{ width: '250px', height: 'calc(100vh - 56px)', position: 'fixed', zIndex: 1000 }}>
+        <nav className="d-lg-block bg-white sidebar" style={{ width: '250px', height: 'calc(100vh - 60px)', position: 'fixed', zIndex: 1000 }}>
           <ul className="list-group list-group-flush mx-3 mt-4">
             <li className="list-group-item border-0 border-bottom rounded">
-              <NavLink to="/admin/dashboard" className="nav-link">
+              <NavLink to="/admin" className="nav-link">
                 <FontAwesomeIcon icon={faTachometerAlt} className="me-3" />
                 Dashboard
               </NavLink>
             </li>
             <li className="list-group-item border-0 border-bottom rounded">
-              <NavLink to="/admin/products" className="nav-link">
+              <NavLink to="products" className="nav-link">
                 <FontAwesomeIcon icon={faChartArea} className="me-3" />
                 Products
               </NavLink>
             </li>
             <li className="list-group-item border-0 border-bottom rounded">
-              <NavLink to="/admin/orders" className="nav-link">
+              <NavLink to="orders" className="nav-link">
                 <FontAwesomeIcon icon={faLock} className="me-3" />
                 Orders
               </NavLink>
             </li>
             <li className="list-group-item border-0 border-bottom rounded">
-              <NavLink to="/admin/customers" className="nav-link">
+              <NavLink to="customers" className="nav-link">
                 <FontAwesomeIcon icon={faUsers} className="me-3" />
                 Customers
               </NavLink>
@@ -47,13 +45,13 @@ const HomeAdmin = () => {
           </ul>
           <ul className="list-group list-group-flush mx-3 mt-4" style={{ position: 'absolute', bottom: '20px', width: '100%' }}>
             <li className="list-group-item border-0 rounded">
-              <NavLink to="/admin/help" className="nav-link">
+              <NavLink to="help" className="nav-link">
                 <FontAwesomeIcon icon={faQuestionCircle} className="me-3" />
                 Help
               </NavLink>
             </li>
             <li className="list-group-item border-0 rounded">
-              <NavLink to="/admin/contact-us" className="nav-link">
+              <NavLink to="contact-us" className="nav-link">
                 <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                 Contact Us
               </NavLink>
@@ -67,7 +65,7 @@ const HomeAdmin = () => {
           </ul>
         </nav>
 
-        <div className="ms-5 w-100 p-4">
+        <div className="content p-4" style={{ marginLeft: '250px', width: 'calc(100% - 250px)' }}>
           <Outlet /> {/* Render child routes here */}
         </div>
       </div>
