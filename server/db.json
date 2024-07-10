@@ -57,5 +57,36 @@
       "id": 4
     }
   ],
-  "categories": []
+  "categories": [
+    {
+      "name": "đt",
+      "description": "kjs",
+      "status": true,
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "product_name": "iphone15",
+      "description": "odi",
+      "unit_price": "1200000",
+      "stock_quantity": "5",
+      "image": "",
+      "category": "đt",
+      "created_at": "9/7/2024",
+      "updated_at": "10/7/2024"
+    },
+    {
+      "id": 2,
+      "product_name": "ss22ultra",
+      "description": "hac",
+      "unit_price": "40000000",
+      "stock_quantity": "20",
+      "image": "",
+      "category": "đt",
+      "created_at": "10/7/2024",
+      "updated_at": "10/7/2024"
+    }
+  ]
 }

@@ -7,6 +7,7 @@ import RegisterPage from './pages/register/RegisterPage';
 import HomeAdmin from './pages/admin/Home/HomeAdmin';
 import Customer from './pages/admin/customer/Customer';
 import CategoriesPage from './pages/admin/categories/CategoriesPage';
+import Products from './pages/admin/product/Products';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/admin" element={<HomeAdmin />}>
           <Route path="/admin/customers" element={<Customer />} />
           <Route path="/admin/categories" element={<CategoriesPage />} />
+          <Route path="/admin/products" element={<Products/>} /> 
         </Route>
       </Routes>
     </div>
