@@ -8,6 +8,8 @@ import HomeAdmin from './pages/admin/Home/HomeAdmin';
 import Customer from './pages/admin/customer/Customer';
 import CategoriesPage from './pages/admin/categories/CategoriesPage';
 import Products from './pages/admin/product/Products';
+import ProductList from './pages/user/product/ProductList';
+import ProductDetail from './pages/user/product/ProductDetail';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<HomePage />} />
+          <Route path="/products" element={<ProductList></ProductList>} />
+          <Route path="/product/:id" element={<ProductDetail></ProductDetail>} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

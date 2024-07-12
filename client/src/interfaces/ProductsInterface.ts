@@ -9,3 +9,4 @@ export interface Product {
   updated_at: string;
   category: string;
 }
+

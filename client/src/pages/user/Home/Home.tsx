@@ -20,7 +20,7 @@ export default function Home() {
                   <Link to="/" className="nav-link text-dark" aria-current="page">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/categories" className="nav-link text-dark">Categories</Link>
+                  <Link to="/Products" className="nav-link text-dark">Products</Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/hot-offers" className="nav-link text-dark">Hot offers</Link>

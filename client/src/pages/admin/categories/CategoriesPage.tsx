@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Category } from '../../../interfaces/CategoriesInterface'; // Đảm bảo import Category interface từ đúng đường dẫn
 import CategoryForm from './CategoryForm'; // Import component để thêm/sửa danh mục
+import { Product } from '../../../interfaces/ProductsInterface'; // Import Product interface
+import { Button } from 'react-bootstrap';
 
 const CategoriesPage: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
+  const [products, setProducts] = useState<Product[]>([]); // State để lưu danh sách sản phẩm của danh mục
 
   useEffect(() => {
     fetchCategories();
@@ -21,8 +24,20 @@ const CategoriesPage: React.FC = () => {
     }
   };
 
+  const fetchProductsByCategory = async (categoryId: number) => {
+    try {
+      const response = await axios.get<Product[]>(`http://localhost:8080/categories/${categoryId}/products`);
+      setProducts(response.data);
+    } catch (error) {
+      console.error(`Error fetching products for category ${categoryId}:`, error);
+      // Handle error fetching products
+    }
+  };
+
   const handleEditCategory = (category: Category) => {
     setEditingCategory(category);
+    // Fetch products when editing category
+    fetchProductsByCategory(category.id);
   };
 
   const handleDeleteCategory = async (categoryId: number) => {
@@ -76,6 +91,27 @@ const CategoriesPage: React.FC = () => {
         setEditingCategory={setEditingCategory}
         fetchCategories={fetchCategories}
       />
+
+      {/* Hiển thị danh sách sản phẩm của danh mục */}
+      {editingCategory && (
+        <>
+          <h3 className="mt-4 mb-3">Products in Category: {editingCategory.name}</h3>
+          <div className="row">
+            {products.map(product => (
+              <div key={product.id} className="col-md-3 mb-4">
+                <div className="card">
+                  <img src={product.image} className="card-img-top" alt={product.product_name} />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.product_name}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <Button variant="primary">View Details</Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -63,6 +63,12 @@
       "description": "kjs",
       "status": true,
       "id": 1
+    },
+    {
+      "name": "cuong",
+      "description": "j bv",
+      "status": true,
+      "id": 2
     }
   ],
   "products": [
@@ -75,7 +81,7 @@
       "image": "",
       "category": "đt",
       "created_at": "9/7/2024",
-      "updated_at": "10/7/2024"
+      "updated_at": "11/7/2024"
     },
     {
       "id": 2,
@@ -87,6 +93,14 @@
       "category": "đt",
       "created_at": "10/7/2024",
       "updated_at": "10/7/2024"
+    },
+    {
+      "id": 3,
+      "product_name": "iphone16",
+      "description": "haha",
+      "unit_price": "12000000",
+      "stock_quantity": "7",
+      "image": ""
     }
   ]
 }
