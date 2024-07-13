@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { User } from '../../interfaces/UserInterface'; // Make sure to import the User interface from the correct path
 
@@ -96,7 +96,7 @@ const LoginPage: React.FC = () => {
         {errorMessages.general && <div className="text-danger mb-3">{errorMessages.general}</div>}
 
         <button type="submit" className="btn btn-primary mb-4 w-100">Sign in</button>
-        <p className="text-center">Not a member? <a href="/register">Register</a></p>
+        <p className="text-center">Not a member? <Link to="/register">Register</Link></p>
       </form>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Product } from '../../../interfaces/ProductsInterface';
 import { Button, Form, Table, Container, Card } from 'react-bootstrap';
 import axios from 'axios';
-import { storage, ref, uploadBytes, getDownloadURL } from '../../../config/firebase'; // Adjust the path as per your project structure
+import { storage, ref, uploadBytes, getDownloadURL } from '../../../config/firebase'; // Điều chỉnh đường dẫn theo cấu trúc dự án của bạn
 
 const Products: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -18,10 +18,11 @@ const Products: React.FC = () => {
     created_at: '',
     updated_at: ''
   });
-  const [categories] = useState<string[]>(['đt', 'cuong']); // Replace with categories fetched from API
+  const [categories, setCategories] = useState<string[]>([]); // Thay vì khởi tạo cứng, sử dụng state để lưu danh sách danh mục
 
   useEffect(() => {
     fetchProducts();
+    fetchCategories(); // Gọi hàm fetchCategories khi component mount
   }, []);
 
   const fetchProducts = async () => {
@@ -34,6 +35,16 @@ const Products: React.FC = () => {
     }
   };
 
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get<string[]>('http://localhost:8080/categories'); // Thay đổi URL để phù hợp với danh mục của bạn
+      setCategories(response.data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      setCategories([]); // Có thể xử lý lỗi theo nhu cầu
+    }
+  };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setCurrentProduct({ ...currentProduct, [name]: value });
@@ -42,7 +53,6 @@ const Products: React.FC = () => {
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Upload image to Firebase Storage
       const storageRef = ref(storage, file.name);
       uploadBytes(storageRef, file).then((snapshot) => {
         getDownloadURL(snapshot.ref).then((url) => {
@@ -67,9 +77,14 @@ const Products: React.FC = () => {
     });
   };
 
-  const handleSaveProduct = () => {
-    setProducts([...products, currentProduct]);
-    setShowForm(false);
+  const handleSaveProduct = async () => {
+    try {
+      const response = await axios.post<Product>('http://localhost:8080/products', currentProduct);
+      setProducts([...products, response.data]);
+      setShowForm(false);
+    } catch (error) {
+      console.error('Error saving product:', error);
+    }
   };
 
   const handleEditClick = (product: Product) => {
@@ -77,17 +92,27 @@ const Products: React.FC = () => {
     setCurrentProduct(product);
   };
 
-  const handleUpdateProduct = () => {
-    const updatedProducts = products.map((prod) =>
-      prod.id === currentProduct.id ? currentProduct : prod
-    );
-    setProducts(updatedProducts);
-    setShowForm(false);
+  const handleUpdateProduct = async () => {
+    try {
+      const response = await axios.put<Product>(`http://localhost:8080/products/${currentProduct.id}`, currentProduct);
+      const updatedProducts = products.map((prod) =>
+        prod.id === response.data.id ? response.data : prod
+      );
+      setProducts(updatedProducts);
+      setShowForm(false);
+    } catch (error) {
+      console.error('Error updating product:', error);
+    }
   };
 
-  const handleDeleteProduct = (productId: number) => {
-    const updatedProducts = products.filter((prod) => prod.id !== productId);
-    setProducts(updatedProducts);
+  const handleDeleteProduct = async (productId: number) => {
+    try {
+      await axios.delete(`http://localhost:8080/products/${productId}`);
+      const updatedProducts = products.filter((prod) => prod.id !== productId);
+      setProducts(updatedProducts);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
   };
 
   return (

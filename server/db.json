@@ -20,13 +20,13 @@
       "email": "cuong@gmail.com",
       "fullname": "ntcuong",
       "password": "012345678",
-      "status": "active",
+      "status": "locked",
       "role": "user",
       "avatar": "",
       "phone": "",
       "address": "",
       "created_at": "6/7/2024",
-      "updated_at": "08/07/2024"
+      "updated_at": "13/07/2024"
     },
     {
       "id": 3,
@@ -69,6 +69,12 @@
       "description": "j bv",
       "status": true,
       "id": 2
+    },
+    {
+      "name": "ipad",
+      "description": "ok",
+      "status": true,
+      "id": 3
     }
   ],
   "products": [
@@ -78,7 +84,7 @@
       "description": "odi",
       "unit_price": "1200000",
       "stock_quantity": "5",
-      "image": "",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/iphone-15-blue-handson.avif?alt=media&token=909fd424-1762-42c7-bf39-52057aef1f05",
       "category": "đt",
       "created_at": "9/7/2024",
       "updated_at": "11/7/2024"
@@ -89,18 +95,21 @@
       "description": "hac",
       "unit_price": "40000000",
       "stock_quantity": "20",
-      "image": "",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/th.jfif?alt=media&token=65262584-6937-4fe8-989b-1e136fe8e6ef",
       "category": "đt",
       "created_at": "10/7/2024",
       "updated_at": "10/7/2024"
     },
     {
       "id": 3,
-      "product_name": "iphone16",
-      "description": "haha",
-      "unit_price": "12000000",
-      "stock_quantity": "7",
-      "image": ""
+      "product_name": "ipad 15b",
+      "description": "",
+      "unit_price": "150",
+      "stock_quantity": "8",
+      "image": "",
+      "category": "cuong",
+      "created_at": "",
+      "updated_at": ""
     }
   ]
 }
