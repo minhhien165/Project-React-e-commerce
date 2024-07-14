@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import { Product } from '../../../interfaces/ProductsInterface';
+import './ProductList.css'
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);

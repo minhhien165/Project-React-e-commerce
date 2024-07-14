@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import '../../login/LoginPage'
 import HeaderUser from '../headerUser/HeaderUser';
-import HomePage from '../HomePage/HomePage';
 
 export default function Home() {
   return (
     <div>
       <header>
-        <HeaderUser></HeaderUser>
+        <HeaderUser />
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
           <div className="container justify-content-center justify-content-md-between">
             <button className="navbar-toggler border py-2 text-dark" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarLeftAlignExample" aria-controls="navbarLeftAlignExample" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +25,9 @@ export default function Home() {
           </div>
         </nav>
       </header>
-      <section>
-        <Outlet></Outlet>
+      <section style={{ minHeight: 'calc(100vh - 112px)' }}>
+        {/* 112px là chiều cao của header và navbar */}
+        <Outlet />
       </section>
     </div>
   );

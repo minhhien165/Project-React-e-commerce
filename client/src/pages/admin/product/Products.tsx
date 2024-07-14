@@ -18,7 +18,7 @@ const Products: React.FC = () => {
     created_at: '',
     updated_at: ''
   });
-  const [categories, setCategories] = useState<string[]>([]); // Thay vì khởi tạo cứng, sử dụng state để lưu danh sách danh mục
+  const [categories, setCategories] = useState<{ name: string, description: string, status: string, id: number }[]>([]); // Sử dụng state để lưu danh sách danh mục
 
   useEffect(() => {
     fetchProducts();
@@ -37,7 +37,7 @@ const Products: React.FC = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get<string[]>('http://localhost:8080/categories'); // Thay đổi URL để phù hợp với danh mục của bạn
+      const response = await axios.get<{ name: string, description: string, status: string, id: number }[]>('http://localhost:8080/categories'); // Thay đổi URL để phù hợp với danh mục của bạn
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -184,8 +184,10 @@ const Products: React.FC = () => {
                   onChange={handleInputChange}
                 >
                   <option value="">Chọn danh mục</option>
-                  {categories.map((category, index) => (
-                    <option key={index} value={category}>{category}</option>
+                  {categories.map((category) => (
+                    <option key={category.id} value={category.name}>
+                      {category.name} {/* Đảm bảo 'category.name' là một chuỗi */}
+                    </option>
                   ))}
                 </Form.Control>
               </Form.Group>

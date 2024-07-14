@@ -47,6 +47,7 @@ const RegisterPage: React.FC = () => {
         ...formData,
         status: 'active',
         role: 'user',
+        isLoggedIn: false,
         avatar: '',
         phone: '',
         address: '',

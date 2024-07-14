@@ -1,10 +1,12 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { User } from '../../interfaces/UserInterface'; // Make sure to import the User interface from the correct path
+import { User } from '../../interfaces/UserInterface';
+import { useAuth } from '../../context/auth-context'; // Đảm bảo bạn đã import useAuth từ đúng đường dẫn
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
+  const { setUser } = useAuth(); // Lấy hàm setUser từ context
 
   const [formData, setFormData] = useState({
     email: '',
@@ -46,10 +48,11 @@ const LoginPage: React.FC = () => {
 
       const user = response.data[0];
 
-      if (user.role === 'admin' && user.status === 'active') {
-        navigate('/admin'); // Navigate to admin page if user is admin and status is active
-      } else if (user.role === 'user' && user.status === 'active') {
-        navigate('/'); // Redirect to home page if user is not admin and status is active
+      // Kiểm tra trạng thái của người dùng
+      if (user.status === 'active') {
+        await axios.put(`http://localhost:8080/users/${user.id}`, { ...user, isLoggedIn: true });
+        setUser(user); // Cập nhật thông tin người dùng vào context
+        navigate('/'); // Redirect to home page
       } else {
         setErrorMessages({ ...errorMessages, general: 'Your account is inactive. Please contact support.' });
       }

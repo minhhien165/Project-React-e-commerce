@@ -12,7 +12,8 @@
       "phone": "",
       "address": "",
       "created_at": "5/7/2024",
-      "updated_at": "5/7/2024"
+      "updated_at": "5/7/2024",
+      "isLoggedIn": true
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
       "phone": "",
       "address": "",
       "created_at": "6/7/2024",
-      "updated_at": "13/07/2024"
+      "updated_at": "15/07/2024",
+      "isLoggedIn": true
     },
     {
       "id": 3,
@@ -53,63 +55,158 @@
       "phone": "",
       "address": "",
       "created_at": "08/07/2024",
-      "updated_at": "08/07/2024",
+      "updated_at": "14/07/2024",
       "id": 4
     }
   ],
   "categories": [
     {
-      "name": "đt",
-      "description": "kjs",
+      "name": "điện thoại",
+      "description": "",
       "status": true,
-      "id": 1
+      "id": 6
     },
     {
-      "name": "cuong",
-      "description": "j bv",
+      "name": "máy tính",
+      "description": "",
       "status": true,
-      "id": 2
+      "id": 7
     },
     {
-      "name": "ipad",
-      "description": "ok",
+      "name": "Tai nghe",
+      "description": "",
       "status": true,
-      "id": 3
+      "id": 8
+    },
+    {
+      "name": "Pc",
+      "description": "",
+      "status": true,
+      "id": 9
     }
   ],
   "products": [
     {
-      "id": 1,
-      "product_name": "iphone15",
-      "description": "odi",
-      "unit_price": "1200000",
-      "stock_quantity": "5",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/iphone-15-blue-handson.avif?alt=media&token=909fd424-1762-42c7-bf39-52057aef1f05",
-      "category": "đt",
-      "created_at": "9/7/2024",
-      "updated_at": "11/7/2024"
+      "id": 7,
+      "product_name": "Mới S23 Ultra",
+      "description": " Màn hình:6.8 inch màn hình cảm ứng điện dung IPS LCD Full HD,\n● Mạng:2G GSM, 3G WCDMA, 4G TD-LTE,4G FDD-LTE,5G NR,\n● Chipset CPU:Mediatek Dimensity MT6797,Octa-Core, Super APU,\n● Chế độ chờ:LAIHai thẻ Sim hai chế độ chờ, hỗ trợ mở rộng thẻ TF,",
+      "unit_price": "1200",
+      "stock_quantity": "12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/sg-11134201-7rd6z-lv03blur11ip61.jpg?alt=media&token=e326c427-5c6f-4cad-b640-ea5d4d55c534",
+      "category": "điện thoại",
+      "created_at": "",
+      "updated_at": ""
     },
     {
-      "id": 2,
-      "product_name": "ss22ultra",
-      "description": "hac",
-      "unit_price": "40000000",
-      "stock_quantity": "20",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/th.jfif?alt=media&token=65262584-6937-4fe8-989b-1e136fe8e6ef",
-      "category": "đt",
-      "created_at": "10/7/2024",
-      "updated_at": "10/7/2024"
+      "id": 8,
+      "product_name": " S23 Ultra Full Screen",
+      "description": "●free ( 1 × Tai Nghe, 1 × Cáp USB, 1 × Vỏ Điện Thoại, 1 × Phim Điện Thoại, 1 × Hướng Dẫn Sử Dụng, 1 × Bộ Chuyển Đổi Sạc EU )\n\n● Màn hình:7.3 inch màn hình cảm ứng điện dung IPS LCD Full HD,\n● Mạng:2G GSM, 3G WCDMA, 4G TD-LTE,4G FDD-LTE,5G NR,\n● Chipset CPU:Mediatek Dimensity MT6797,Octa-Core, Super APU,\n● Chế độ chờ:LAIHai thẻ Sim hai chế độ chờ, hỗ trợ mở rộng thẻ TF,\n● Bộ nhớTùy chọn:RAM: 1/2/3/4/8/12GB, ROM: 8/16/32/64/128/256/512GB,\n",
+      "unit_price": "1100",
+      "stock_quantity": "12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134258-7r98o-lxkvpaa7y66xbc.png?alt=media&token=8d947677-708f-4ee0-a9eb-9f56abad633c",
+      "category": "điện thoại",
+      "created_at": "",
+      "updated_at": ""
     },
     {
-      "id": 3,
-      "product_name": "ipad 15b",
-      "description": "",
-      "unit_price": "150",
+      "id": 9,
+      "product_name": "Oppo F9 Pro",
+      "description": "\tMàn hình: LTPS LCD, 6.3\", Full HD+\n•\tHệ điều hành: ColorOS 5.2 (Android 8.1)\n•\tCamera sau: Chính 16 MP & Phụ 2 MP\n•\tCamera trước: 25 MP\n•\tCPU: MediaTek Helio P60 8 nhân 64-bit\n•\tRAM: 8 GB\n•\tBộ nhớ trong: 256 GB",
+      "unit_price": "800",
       "stock_quantity": "8",
-      "image": "",
-      "category": "cuong",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/0cefb4413d2266088c9630510758ad29.jpg?alt=media&token=c18313e1-6174-419b-84b3-9d09f8b43bd8",
+      "category": "điện thoại",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 10,
+      "product_name": "Xiaomi Redmi 12",
+      "description": "Thương hiệu\nXiaomi\nDung lượng pin\n5000mAh\nBộ xử lý\nHelio G88\nĐộ phân giải camera chính\n50MP",
+      "unit_price": "900",
+      "stock_quantity": "3",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134207-7r98o-lva6q99vyo3xfc.jpg?alt=media&token=ed0b491d-d286-466b-a601-11d459ab2e82",
+      "category": "điện thoại",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 11,
+      "product_name": "Laptop Samsung 14inch Galaxy Book3 Pro,",
+      "description": "Tốc độ tăng tốc sự nghiệp: Vượt qua và phát triển mạnh mẽ, Máy tính xách tay PC cho bạn; Đạt được tham vọng của bạn với thiết kế mới nhất Bộ xử lý mạnh mẽ trong Intel, hoàn hảo cho một phong cách sống nhanh chóng\n\nThiết kế mỏng, nhẹ và chất lượng cao: Tiếp tục, cuộc sống nhanh chóng - Galaxy Book3 Pro sẽ không làm bạn chậm lại; Với thiết kế mỏng, nhẹ, nó có thể được di chuyển cùng bạn, chiếc PC mạnh mẽ này có thể giúp bạn theo đuổi Tham vọng bất cứ lúc nào",
+      "unit_price": "1800",
+      "stock_quantity": "15",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134258-7r98o-lxkvpaa7y66xbc%20(1).png?alt=media&token=1c2ec542-823f-4308-97c1-911677a5b5dc",
+      "category": "máy tính",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 12,
+      "product_name": "LAPTOP CŨ CẤU HÌNH DUAL-CORE",
+      "description": "Shop bán Laptop cũ  với nhiều cấu hình khác nhau về tốc độ CPU, Bộ nhớ RAM, hoặc Ổ cứng lưu trữ 80-500Gb.\nLaptop của các Hãng sản xuất khác nhau như Dell, HP, Asus, Acer, Sony,…\n\n-\tKhi Bạn mua Laptop cũ Bạn nên xác định nhu cầu và mục đích sử dụng Máy. Chỉ cần nhu cầu đơn giản văn phòng. lướt web xem youtube.học trực tuyến , chơi các games giải trí không cần cấu hình mạnh thì Bạn nên chọn Cấu hình DualCore.",
+      "unit_price": "600",
+      "stock_quantity": "3",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134207-7qukw-lkf8zdiyu948ed.jpg?alt=media&token=fc8a609e-3cbb-4b9e-ad13-d3a19dcec984",
+      "category": "máy tính",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 13,
+      "product_name": "PC Mini HP Thin Client T630",
+      "description": "- PC Mini HP Thin Client T630 là dòng PC Mini \n     - CPU: AMD G-Series GX-420GI (4nhân / 4luồng, Upto 2.2 GHz quad-core, 2MB Cache)\n     -  RAM: 8GB DDR4\n     - Ổ cứng: SSD 128GB M.2 PCIe NVMe",
+      "unit_price": "550",
+      "stock_quantity": "6",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134207-7r98o-lueh6nt6yq7336.jpg?alt=media&token=a8ee3bad-5818-42db-8368-e500edeaf1c5",
+      "category": "máy tính",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 14,
+      "product_name": "ai nghe máy tính GH112",
+      "description": "Tai nghe máy tính GH112 cho PC, Tai nghe có dây có micrô, Tai nghe để học tập, Nghe nhạc, Dễ dàng mang theo và sử dụng, chơi game, quay video, giải trí và giải trí, tính thẩm mỹ và hiệu suất cao, thiết kế bảo vệ tai, nhẹ để đeo trong tai.",
+      "unit_price": "25",
+      "stock_quantity": "20",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/sg-11134301-7rcdv-ltrwmh3y5t1k28.jpg?alt=media&token=e813bebd-8d8d-4b9e-bcd6-8efd177f8fff",
+      "category": "Tai nghe",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 15,
+      "product_name": "X15TWS Tai nghe bluetooth",
+      "description": "✅ Tập trung vào hàng hóa Authentic, Cung cấp giá cả và dịch vụ tốt hơn!\n✅ Mua sắm một cửa! Cửa hàng của chúng tôi bao gồm nhiều danh mục, bao gồm thời trang, gia đình, trang trí, quần áo, sản phẩm điện tử.\n✅ Dịch VỤ TRỰC TUYẾN. Nếu bạn có bất kỳ vấn đề hoặc câu hỏi, xin vui lòng liên hệ trước! Chúng tôi sẽ cung cấp cho bạn một trải nghiệm mua sắm tuyệt vời.",
+      "unit_price": "35",
+      "stock_quantity": "30",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/sg-11134301-7rccf-ltuyz5i0yai893.jpg?alt=media&token=30c9554a-c44a-44dc-88a8-5bad6fb287fc",
+      "category": "máy tính",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 16,
+      "product_name": "AIO KIWI 24P",
+      "description": "Mẫu máy tính all in one KIWI AIO 24P \nMẫu cơ bản của hãng , cung cấp trải nghiệm văn phòng học tập chi phí thấp và mạnh mẽ .\nNgoài ra vẫn đáp ưng nhu cầu Game và đồ họa cơ bản và trung cấp.",
+      "unit_price": "780",
+      "stock_quantity": "12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134207-7qukw-lfv1aomdjawn41.jpg?alt=media&token=2bd3d630-5c94-4136-b1ea-3bdc2baa093e",
+      "category": "Pc",
+      "created_at": "",
+      "updated_at": ""
+    },
+    {
+      "id": 17,
+      "product_name": "MÁY TÍNH ĐỂ BÀN I3 I5",
+      "description": "MÁY TÍNH Minh Đức PC xin mang đến cấu hình PC Gaming, cam kết sản phẩm thật chất lượng :\n- Chạy mượt các tựa game HOT : LOL, CF, Fifa 4 ở cấu hình trung bình muốn chơi mượt có thể lắp thêm Card rời\n- Máy khởi động cực nhanh mượt mà sử dụng ssd",
+      "unit_price": "1150",
+      "stock_quantity": "12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ptit-nmh-project.appspot.com/o/vn-11134207-7r98o-lugpbrih0h7630.jpg?alt=media&token=2f11f557-14d4-4826-b115-1da47acece68",
+      "category": "Pc",
       "created_at": "",
       "updated_at": ""
     }
-  ]
+  ],
+  "cart": []
 }
