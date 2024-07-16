@@ -57,6 +57,21 @@
       "created_at": "08/07/2024",
       "updated_at": "14/07/2024",
       "id": 4
+    },
+    {
+      "username": "hien",
+      "email": "ab@gmail.com",
+      "fullname": "Nguyễn Minh Hiển",
+      "password": "123454321",
+      "status": "active",
+      "role": "user",
+      "isLoggedIn": true,
+      "avatar": "",
+      "phone": "",
+      "address": "",
+      "created_at": "15/7/2024",
+      "updated_at": "15/7/2024",
+      "id": 5
     }
   ],
   "categories": [
@@ -83,6 +98,12 @@
       "description": "",
       "status": true,
       "id": 9
+    },
+    {
+      "name": "ipad",
+      "description": "",
+      "status": true,
+      "id": 10
     }
   ],
   "products": [
@@ -206,7 +227,72 @@
       "category": "Pc",
       "created_at": "",
       "updated_at": ""
+    },
+    {
+      "id": 18,
+      "product_name": "ssss",
+      "description": "111",
+      "unit_price": "11",
+      "stock_quantity": "11",
+      "image": "",
+      "category": "ipad",
+      "created_at": "",
+      "updated_at": ""
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 500,
+      "product_id": 9,
+      "name": "Oppo F9 Pro",
+      "unit_price": "800",
+      "order_quantity": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": 1721023468455,
+      "serial_number": "ORD-1721023468455",
+      "user_id": 1,
+      "order_at": "2024-07-15T06:04:28.455Z",
+      "total_price": 1200,
+      "status": 7,
+      "note": "đt",
+      "order_details": [
+        {
+          "id": 1721023468455,
+          "product_id": 958,
+          "quantity": 1,
+          "price": "1200"
+        }
+      ],
+      "receive_name": "Nguyễn Minh Hiển",
+      "receive_address": "123ba trieu",
+      "receive_phone": "0930434341",
+      "created_at": "15/7/2024",
+      "updated_at": "15/7/2024"
+    },
+    {
+      "id": 1721026162642,
+      "serial_number": "ORD-1721026162642",
+      "user_id": 1,
+      "order_at": "2024-07-15T06:49:22.642Z",
+      "total_price": 800,
+      "status": 1,
+      "note": "hbi",
+      "order_details": [
+        {
+          "id": 1721026162642,
+          "product_id": 500,
+          "quantity": 1,
+          "price": "800"
+        }
+      ],
+      "receive_name": "Nguyễn Minh Hiển",
+      "receive_address": "123ba trieu",
+      "receive_phone": "0930434341",
+      "created_at": "15/7/2024",
+      "updated_at": "15/7/2024"
+    }
+  ]
 }

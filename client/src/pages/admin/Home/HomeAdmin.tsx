@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import HeaderAdmin from '../header/HeaderAdmin';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTachometerAlt, faChartArea, faLock, faUsers, faList, faQuestionCircle, faEnvelope, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTachometerAlt, faChartArea, faLock, faUsers, faList, faQuestionCircle, faEnvelope, faSignOutAlt, faClipboardList } from '@fortawesome/free-solid-svg-icons'; // Import thêm icon cho Orders
 
 const HomeAdmin = () => {
   const navigate = useNavigate();
@@ -31,24 +31,24 @@ const HomeAdmin = () => {
               </NavLink>
             </li>
             <li className="list-group-item border-0 border-bottom rounded">
-              <NavLink to="orders" className="nav-link">
-                <FontAwesomeIcon icon={faLock} className="me-3" />
-                Orders
-              </NavLink>
-            </li>
-            <li className="list-group-item border-0 border-bottom rounded">
               <NavLink to="customers" className="nav-link">
                 <FontAwesomeIcon icon={faUsers} className="me-3" />
                 Customers
               </NavLink>
             </li>
             <li className="list-group-item border-0 border-bottom rounded">
-              <NavLink to="Categories" className="nav-link">
-                  <FontAwesomeIcon icon={faList} className="me-3" />
-                  Categories
-                </NavLink>
-              </li>
-
+              <NavLink to="categories" className="nav-link">
+                <FontAwesomeIcon icon={faList} className="me-3" />
+                Categories
+              </NavLink>
+            </li>
+            {/* Thêm mục Orders */}
+            <li className="list-group-item border-0 border-bottom rounded">
+              <NavLink to="orders" className="nav-link">
+                <FontAwesomeIcon icon={faClipboardList} className="me-3" />
+                Orders
+              </NavLink>
+            </li>
           </ul>
           <ul className="list-group list-group-flush mx-3 mt-4" style={{ position: 'absolute', bottom: '20px', width: '100%' }}>
             <li className="list-group-item border-0 rounded">

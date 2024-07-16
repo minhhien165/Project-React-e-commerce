@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Button, Form, ListGroup } from 'react-bootstrap';
 import { CartItem } from '../../../interfaces/CartItem'; // Import CartItem interface if separate from ProductInterface
+import { Link } from 'react-router-dom';
 
 const CartPage: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -80,7 +81,9 @@ const CartPage: React.FC = () => {
           <p>Số loại sản phẩm: {cart.length}</p>
           <p>Tổng tiền: ${getTotalPrice()}</p>
         </div>
-        <Button variant="primary" onClick={() => alert('Chức năng mua hàng chưa được triển khai.')}>Mua hàng</Button>
+        <Link to="checkout">
+          <Button variant="primary">Mua hàng</Button>
+        </Link>
       </div>
     </div>
   );

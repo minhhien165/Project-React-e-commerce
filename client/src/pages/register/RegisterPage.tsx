@@ -24,22 +24,38 @@ const RegisterPage: React.FC = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setErrorMessages({ ...errorMessages, [name]: '' });
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+    setErrorMessages(prevState => ({
+      ...prevState,
+      [name]: '', // Clear error message for the input field
+    }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formData.username || !formData.email || !formData.fullname || !formData.password) {
+    const { username, email, fullname, password } = formData;
+
+    if (!username || !email || !fullname || !password) {
       setErrorMessages({ ...errorMessages, general: 'Please fill in all required fields.' });
       return;
     }
 
     try {
-      const existingUser = await axios.get(`http://localhost:8080/users?username=${formData.username}`);
-      if (existingUser.data.length > 0) {
+      // Kiểm tra xem username đã tồn tại hay chưa
+      const existingUsername = await axios.get(`http://localhost:8080/users?username=${username}`);
+      if (existingUsername.data.length > 0) {
         setErrorMessages({ ...errorMessages, username: 'Username already exists. Please choose another one.' });
+        return;
+      }
+
+      // Kiểm tra xem email đã tồn tại hay chưa
+      const existingEmail = await axios.get(`http://localhost:8080/users?email=${email}`);
+      if (existingEmail.data.length > 0) {
+        setErrorMessages({ ...errorMessages, email: 'Email already exists. Please use another one.' });
         return;
       }
 

@@ -65,10 +65,6 @@ const HeaderUser: React.FC = () => {
                   <p className="d-none d-md-block mb-0">Sign in</p>
                 </Link>
               )}
-              <a href="#" className="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center">
-                <i className="fas fa-heart m-1 me-md-2"></i>
-                <p className="d-none d-md-block mb-0">Wishlist</p>
-              </a>
               <Link to="/cart" className="border rounded py-1 px-3 nav-link d-flex align-items-center">
                 <i className="fas fa-shopping-cart m-1 me-md-2"></i>
                 <p className="d-none d-md-block mb-0">My cart</p>
